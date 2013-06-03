@@ -1,0 +1,36 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{graphicx}
+
+
+\lstset{language=C++}%这条命令可以让LaTeX排版时将C++键字突出显示
+\lstset{breaklines}%这条命令可以让LaTeX自动将长的代码行换行排版
+\lstset{extendedchars=false}%这一条命令可以解决代码跨页时，章节标题，页眉等汉字不显示的问题
+\lstset{numbers=left, 
+numberstyle=\tiny, 
+frame=shadowbox, 
+basicstyle=\ttfamily,
+}
+
+\usepackage{titlesec}
+\newcommand\secformat[1]{%
+  \parbox[b]{.5\textwidth}{\filleft\bfseries #1}%
+  \quad\rule[-12pt]{2pt}{70pt}\quad
+  {\fontsize{60}{60}\selectfont\thesection}}
+\titleformat{\section}[block]
+  {\filleft\normalfont\sffamily}{}{0pt}{\secformat}
+\titlespacing*{\section}{0pt}{*3}{*2}[1pc]
+
+
+
+\begin{document}
+\title{
+Solutions for ``Introduction to Algorithm''
+}
+\newpage
+\section{The Role of Algorithm in Computing}
+\subsection{Algorithms}
+\input{chapter1/1_1.tex}
+\end{document}
